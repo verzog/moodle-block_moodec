@@ -1,0 +1,17 @@
+.block_moodec .block-moodec-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.block_moodec .block-moodec-links li {
+    margin-bottom: 0.5rem;
+}
+
+.block_moodec .block-moodec-cart-summary {
+    font-weight: bold;
+}
+
+.block_moodec .block-moodec-cart-empty {
+    color: #6c757d;
+}
