@@ -26,13 +26,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Block that links to the Moodec storefront and shows a mini cart.
  */
 class block_moodec extends block_base {
-
     /**
      * Initialise the block title.
      *
