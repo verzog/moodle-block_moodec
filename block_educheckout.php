@@ -65,6 +65,8 @@ class block_educheckout extends block_base {
     public function applicable_formats() {
         return [
             'all' => true,
+            'site-index' => true,
+            'my' => true,
             'mod' => false,
         ];
     }
