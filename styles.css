@@ -1,17 +1,17 @@
-.block_moodec .block-moodec-links {
+.block_educheckout .block-educheckout-links {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.block_moodec .block-moodec-links li {
+.block_educheckout .block-educheckout-links li {
     margin-bottom: 0.5rem;
 }
 
-.block_moodec .block-moodec-cart-summary {
+.block_educheckout .block-educheckout-cart-summary {
     font-weight: bold;
 }
 
-.block_moodec .block-moodec-cart-empty {
+.block_educheckout .block-educheckout-cart-empty {
     color: #6c757d;
 }

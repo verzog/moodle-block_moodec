@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Privacy provider for the Moodec storefront block.
+ * Privacy provider for the EduCheckout storefront block.
  *
- * @package    block_moodec
+ * @package    block_educheckout
  * @copyright  2026 LearningWorks Ltd
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace block_moodec\privacy;
+namespace block_educheckout\privacy;
 
 /**
- * The Moodec storefront block stores no personal data of its own; it only
- * displays cart data owned and described by the local_moodec plugin.
+ * The EduCheckout storefront block stores no personal data of its own; it only
+ * displays cart data owned and described by the local_educheckout plugin.
  */
 class provider implements \core_privacy\local\metadata\null_provider {
     /**

@@ -15,32 +15,32 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Moodec storefront block.
+ * EduCheckout storefront block.
  *
- * Surfaces the local_moodec course store: a link into the catalogue and,
+ * Surfaces the local_educheckout course store: a link into the catalogue and,
  * for logged-in users, a live summary of their open cart with a checkout
  * shortcut.
  *
- * @package    block_moodec
+ * @package    block_educheckout
  * @copyright  2026 LearningWorks Ltd
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * Block that links to the Moodec storefront and shows a mini cart.
+ * Block that links to the EduCheckout storefront and shows a mini cart.
  */
-class block_moodec extends block_base {
+class block_educheckout extends block_base {
     /**
      * Initialise the block title.
      *
      * @return void
      */
     public function init() {
-        $this->title = get_string('pluginname', 'block_moodec');
+        $this->title = get_string('pluginname', 'block_educheckout');
     }
 
     /**
-     * The Moodec storefront block has no per-instance configuration.
+     * The EduCheckout storefront block has no per-instance configuration.
      *
      * @return bool
      */
@@ -84,40 +84,40 @@ class block_moodec extends block_base {
         $this->content = new stdClass();
         $this->content->footer = '';
 
-        $catalogueurl = new moodle_url('/local/moodec/index.php');
+        $catalogueurl = new moodle_url('/local/educheckout/index.php');
         $items = [];
         $items[] = html_writer::link(
             $catalogueurl,
-            get_string('browsecatalogue', 'block_moodec'),
-            ['class' => 'block-moodec-catalogue']
+            get_string('browsecatalogue', 'block_educheckout'),
+            ['class' => 'block-educheckout-catalogue']
         );
 
-        if (isloggedin() && !isguestuser() && class_exists('\local_moodec\cart')) {
-            $cart = \local_moodec\cart::get_open((int) $USER->id);
-            $carturl = new moodle_url('/local/moodec/cart.php');
+        if (isloggedin() && !isguestuser() && class_exists('\local_educheckout\cart')) {
+            $cart = \local_educheckout\cart::get_open((int) $USER->id);
+            $carturl = new moodle_url('/local/educheckout/cart.php');
 
             if ($cart->is_empty()) {
                 $items[] = html_writer::span(
-                    get_string('cartempty', 'block_moodec'),
-                    'block-moodec-cart-empty'
+                    get_string('cartempty', 'block_educheckout'),
+                    'block-educheckout-cart-empty'
                 );
             } else {
                 $a = new stdClass();
                 $a->count = count($cart->get_items());
                 $a->total = format_float($cart->get_total(), 2) . ' ' . $cart->get_currency();
                 $items[] = html_writer::span(
-                    get_string('cartsummary', 'block_moodec', $a),
-                    'block-moodec-cart-summary'
+                    get_string('cartsummary', 'block_educheckout', $a),
+                    'block-educheckout-cart-summary'
                 );
                 $items[] = html_writer::link(
                     $carturl,
-                    get_string('viewcart', 'block_moodec'),
-                    ['class' => 'block-moodec-cart-link']
+                    get_string('viewcart', 'block_educheckout'),
+                    ['class' => 'block-educheckout-cart-link']
                 );
             }
         }
 
-        $this->content->text = html_writer::alist($items, ['class' => 'block-moodec-links']);
+        $this->content->text = html_writer::alist($items, ['class' => 'block-educheckout-links']);
 
         return $this->content;
     }

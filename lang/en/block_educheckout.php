@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Strings for the Moodec storefront block.
+ * Strings for the EduCheckout storefront block.
  *
- * @package    block_moodec
+ * @package    block_educheckout
  * @copyright  2026 LearningWorks Ltd
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,8 +25,8 @@
 $string['browsecatalogue'] = 'Browse the course store';
 $string['cartempty'] = 'Your cart is empty.';
 $string['cartsummary'] = 'Cart: {$a->count} item(s) — {$a->total}';
-$string['moodec:addinstance'] = 'Add a new Moodec storefront block';
-$string['moodec:myaddinstance'] = 'Add a new Moodec storefront block to the Dashboard';
-$string['pluginname'] = 'Moodec storefront';
-$string['privacy:metadata'] = 'The Moodec storefront block does not store any personal data; it displays cart information owned by the local_moodec plugin.';
+$string['educheckout:addinstance'] = 'Add a new EduCheckout storefront block';
+$string['educheckout:myaddinstance'] = 'Add a new EduCheckout storefront block to the Dashboard';
+$string['pluginname'] = 'EduCheckout storefront';
+$string['privacy:metadata'] = 'The EduCheckout storefront block does not store any personal data; it displays cart information owned by the local_educheckout plugin.';
 $string['viewcart'] = 'View cart';
