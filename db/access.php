@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Capability definitions for the Moodec storefront block.
+ * Capability definitions for the EduCheckout storefront block.
  *
- * @package    block_moodec
+ * @package    block_educheckout
  * @copyright  2026 LearningWorks Ltd
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [
 
-    'block/moodec:addinstance' => [
+    'block/educheckout:addinstance' => [
         'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
@@ -37,7 +37,7 @@ $capabilities = [
         'clonepermissionsfrom' => 'moodle/site:manageblocks',
     ],
 
-    'block/moodec:myaddinstance' => [
+    'block/educheckout:myaddinstance' => [
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => [

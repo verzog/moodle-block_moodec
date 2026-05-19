@@ -1,6 +1,6 @@
-# Moodec storefront block (block_moodec)
+# EduCheckout storefront block (block_educheckout)
 
-A Moodle block that surfaces the [local_moodec](https://github.com/verzog/moodle-local_moodec)
+A Moodle block that surfaces the [local_educheckout](https://github.com/verzog/moodle-local_educheckout)
 course store. It shows a link into the catalogue and, for logged-in users, a
 live summary of their open cart (item count, running total and currency) with a
 shortcut to the cart page.
@@ -10,8 +10,8 @@ Targets **Moodle 5.0+ / PHP 8.2+**.
 ## Requirements
 
 - Moodle 5.0 or later.
-- The `local_moodec` storefront plugin (declared as a dependency), which in
-  turn requires the `enrol_moodec` enrolment plugin.
+- The `local_educheckout` storefront plugin (declared as a dependency), which in
+  turn requires the `enrol_educheckout` enrolment plugin.
 
 ## Installing via uploaded ZIP file
 
@@ -25,20 +25,30 @@ Targets **Moodle 5.0+ / PHP 8.2+**.
 
 The plugin can also be installed by putting the contents of this directory into
 
-    {your/moodle/dirroot}/blocks/moodec
+    {your/moodle/dirroot}/blocks/educheckout
 
 then log in as an admin and go to _Site administration > Notifications_ to
 complete the installation.
 
 ## Usage
 
-Turn editing on, then add the **Moodec storefront** block from the *Add a block*
+Turn editing on, then add the **EduCheckout storefront** block from the *Add a block*
 menu on any page where you want learners to reach the store (course pages, the
 site front page or the Dashboard).
 
+## Credits and acknowledgements
+
+This block ships alongside the **EduCheckout** storefront suite, which is a
+rename and continuation of the **Moodec** plugins originally written in 2015
+by **Thomas Threadgold** at **LearningWorks Ltd**
+([github.com/LearningWorks](https://github.com/LearningWorks)). The block
+itself was added during the rebuild, but it would not exist without the
+storefront and enrolment plugins it complements — thanks to Thomas and
+LearningWorks for that prior art.
+
 ## License
 
-2026 LearningWorks Ltd
+Copyright (C) 2026 the EduCheckout contributors.
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
