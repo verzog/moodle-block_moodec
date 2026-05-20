@@ -56,19 +56,19 @@ jobs:
         with:
           path: plugin
 
-      - name: Check out local_moodec dependency
+      - name: Check out local_educheckout dependency
         uses: actions/checkout@v4
         with:
-          repository: verzog/moodle-local_moodec
+          repository: verzog/moodle-local_educheckout
           ref: master
-          path: extra/local_moodec
+          path: extra/local_educheckout
 
-      - name: Check out enrol_moodec dependency
+      - name: Check out enrol_educheckout dependency
         uses: actions/checkout@v4
         with:
-          repository: verzog/moodle-enrol_moodec
+          repository: verzog/moodle-enrol_educheckout
           ref: master
-          path: extra/enrol_moodec
+          path: extra/enrol_educheckout
 
       - name: Setup PHP ${{ matrix.php }}
         uses: shivammathur/setup-php@v2
