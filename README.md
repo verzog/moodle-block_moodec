@@ -46,18 +46,25 @@ itself was added during the rebuild, but it would not exist without the
 storefront and enrolment plugins it complements — thanks to Thomas and
 LearningWorks for that prior art.
 
+The `enrol_educheckout` companion plugin is itself derived from Moodle's core
+manual enrolment plugin (`enrol_manual`) originally written by
+**Petr Skoda** ([skodak.org](http://skodak.org)).
+
 ## License
 
 Copyright (C) 2026 the EduCheckout contributors.
+
+Built on the foundation of the original Moodec suite,
+Copyright (C) 2015 Thomas Threadgold, LearningWorks Ltd.
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
 Foundation, either version 3 of the License, or (at your option) any later
 version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
