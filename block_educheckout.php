@@ -17,9 +17,9 @@
 /**
  * EduCheckout storefront block.
  *
- * Surfaces the local_educheckout course store: a link into the catalogue and,
- * for logged-in users, a live summary of their open cart with a checkout
- * shortcut.
+ * Embeds the local_educheckout product catalogue directly in a block region,
+ * so the storefront can be surfaced on the site home page (or any page the
+ * block is allowed on) rather than only linked to.
  *
  * @package    block_educheckout
  * @copyright  2026 LearningWorks Ltd
@@ -27,7 +27,7 @@
  */
 
 /**
- * Block that links to the EduCheckout storefront and shows a mini cart.
+ * Block that renders the EduCheckout storefront catalogue.
  */
 class block_educheckout extends block_base {
     /**
@@ -72,12 +72,12 @@ class block_educheckout extends block_base {
     }
 
     /**
-     * Build the block body: catalogue link plus a mini cart.
+     * Render the storefront catalogue inside the block.
      *
      * @return stdClass|null
      */
     public function get_content() {
-        global $USER;
+        global $OUTPUT;
 
         if ($this->content !== null) {
             return $this->content;
@@ -86,40 +86,15 @@ class block_educheckout extends block_base {
         $this->content = new stdClass();
         $this->content->footer = '';
 
-        $catalogueurl = new moodle_url('/local/educheckout/index.php');
-        $items = [];
-        $items[] = html_writer::link(
-            $catalogueurl,
-            get_string('browsecatalogue', 'block_educheckout'),
-            ['class' => 'block-educheckout-catalogue']
-        );
-
-        if (isloggedin() && !isguestuser() && class_exists('\local_educheckout\cart')) {
-            $cart = \local_educheckout\cart::get_open((int) $USER->id);
-            $carturl = new moodle_url('/local/educheckout/cart.php');
-
-            if ($cart->is_empty()) {
-                $items[] = html_writer::span(
-                    get_string('cartempty', 'block_educheckout'),
-                    'block-educheckout-cart-empty'
-                );
-            } else {
-                $a = new stdClass();
-                $a->count = count($cart->get_items());
-                $a->total = format_float($cart->get_total(), 2) . ' ' . $cart->get_currency();
-                $items[] = html_writer::span(
-                    get_string('cartsummary', 'block_educheckout', $a),
-                    'block-educheckout-cart-summary'
-                );
-                $items[] = html_writer::link(
-                    $carturl,
-                    get_string('viewcart', 'block_educheckout'),
-                    ['class' => 'block-educheckout-cart-link']
-                );
-            }
+        // The catalogue presenter lives in local_educheckout; if that plugin is
+        // missing there is nothing to show.
+        if (!class_exists('\local_educheckout\catalogue')) {
+            $this->content->text = '';
+            return $this->content;
         }
 
-        $this->content->text = html_writer::alist($items, ['class' => 'block-educheckout-links']);
+        $data = \local_educheckout\catalogue::export_for_template();
+        $this->content->text = $OUTPUT->render_from_template('local_educheckout/catalogue', $data);
 
         return $this->content;
     }
